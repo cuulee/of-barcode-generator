@@ -1,8 +1,9 @@
 # OpenFaaS - Barcode generator
 
-Do you need to generate barcodes or qr codes? This function can generate ```EAN13```, ```QR```, ```PDF417```, ```CODE39```, ```CODE128```, ```DataMatrix``` and ```Interleaved 2 of 5```
+Do you need to generate barcodes or qr codes? This function can generate a lot of them.
 
-> This is a port of [barcode-as-a-service](https://github.com/padiazg/barcode-as-a-service). Also published on [Heroku](https://barcode-render.herokuapp.com/).
+>This project uses [bqip-js](https://github.com/metafloor/bwip-js).  
+bwip-js is a translation to native JavaScript of the amazing code provided in [Barcode Writer in Pure PostScript](https://github.com/bwipp/postscriptbarcode). The translated code can run on any modern browser or JavaScript-based server framework.
 
 ## Before you start
 
@@ -23,24 +24,39 @@ faas-cli build && faas-cli deploy
 ```
 
 ## Parameters:
-Parameters must be passed in JSON format:
+Parameters must be passed in JSON format:  
 Example:
 ```json
 {
-  "code": "qrcode", 
-  "value": "Hello world from OpenFaaS!"
+  "bcid": "qrcode",
+  "text": "Hello world from OpenFaaS!"
 }
 ```
+Specific from this project:
+* **base64**: Optional, not part of the modules parameters. Tells the function that we want the ouput encoded in base64. Defaults tu ```false```.
 
-* **code**: The requested code. *Mandatory*  
+Specific from bwip-js
+* **bcid**: The requested code. *required*  
     Posible values are
-    + ean13
-    + qr
-    + pdf417
-    + code39
-    + code128
-    + datamatrix
-    + interleaved2of5
-* **value**: The value to represent. *Mandatory*
-* **scale**: The scale of the image. Defaults to 0, increase the value to get a larger image. *Optional*
-* **base64**: If we want the ouput encoded in base64. Defaults tu false. *Optional*
+
+* **text**: The value to represent. *required*
+
+* **scaleX**: The x-axis scaling factor. Must be an integer > 0. Default is 2.
+
+* **scaleY**: The y-axis scaling factor. Must be an integer > 0. Default is scaleX.
+
+* **scale**: Sets both the x-axis and y-axis scaling factors. Must be an integer > 0.
+
+* **rotate**: Allows rotating the image to one of the four orthogonal orientations. A string value. Must be one of:
+
+    "N" : Normal (not rotated). The default.
+    "R" : Clockwise (right) 90 degree rotation.
+    "L" : Counter-clockwise (left) 90 degree rotation.
+    "I" : Inverted 180 degree rotation.
+    paddingwidth : Sets the left and right padding (in points/pixels) around the rendered barcode. Rotates and scales with the image.
+
+* **paddingheight**: Sets the top and bottom padding (in points/pixels) around the rendered barcode. Rotates and scales with the image.
+
+* **monochrome**: Sets the human-readable text to render in monochrome. Boolean true or false. Default is false which renders 256-level gray-scale anti-aliased text.
+
+There are more options specific from BWIPP, and they are documented in the  [BWIPP wiki](https://github.com/bwipp/postscriptbarcode/wiki). You need to consult there to determine what options are available for each barcode type.
