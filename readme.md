@@ -34,4 +34,4 @@ faas-cli build && faas-cli deploy
     + interleaved2of5
 * **value**: The value to represent. *Mandatory*
 * **scale**: The scale of the image. Defaults to 0, increase the value to get a larger image. *Optional*
-* **base64**: If we want the ouput encoded en base64. Defaults tu false. *Optional*
+* **base64**: If we want the ouput encoded in base64. Defaults tu false. *Optional*
