@@ -23,6 +23,15 @@ faas-cli build && faas-cli deploy
 ```
 
 ## Parameters:
+Parameters must be passed in JSON format:
+Example:
+```json
+{
+  "code": "qrcode", 
+  "value": "Hello world from OpenFaaS!"
+}
+```
+
 * **code**: The requested code. *Mandatory*  
     Posible values are
     + ean13
