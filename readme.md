@@ -33,7 +33,7 @@ Example:
 }
 ```
 Specific from this project:
-* **base64**: Optional, not part of the modules parameters. Tells the function that we want the ouput encoded in base64. Defaults tu ```false```.
+* **base64**: Optional, the only parameter added by this project. Tells the function that we want the ouput encoded in base64. Defaults tu ```false```.
 
 Specific from bwip-js
 * **bcid**: The requested code. *required*  
