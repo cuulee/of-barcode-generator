@@ -2,7 +2,7 @@
 
 Do you need to generate barcodes or qr codes? This function can generate a lot of them.
 
->This project uses [bqip-js](https://github.com/metafloor/bwip-js).  
+>This project uses [bwip-js](https://github.com/metafloor/bwip-js).  
 bwip-js is a translation to native JavaScript of the amazing code provided in [Barcode Writer in Pure PostScript](https://github.com/bwipp/postscriptbarcode). The translated code can run on any modern browser or JavaScript-based server framework.
 
 ## Before you start
