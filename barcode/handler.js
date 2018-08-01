@@ -28,20 +28,6 @@ module.exports = (context, callback) => {
     options.paddingwidth = options.paddingwidth != undefined ? options.paddingwidth : 1;
     options.paddingheight = options.paddingheight != undefined ? options.paddingheight : 1;
 
-    // const options = {
-    //     bcid,
-    //     text,
-    //     guardwhitespace: true,
-    //     inkspread: 0,
-    //     scale,
-    //     // showborder,
-    //     // bordercolor,
-    //     // borderwidth,
-    //     paddingwidth: padding,
-    //     paddingheight: padding,
-    //     backgroundcolor,
-    // };
-
     bwipjs.toBuffer(options, (error, png) => {
         if (error) {
             callback(error, undefined);
