@@ -37,7 +37,7 @@ Specific from this project:
 
 Specific from bwip-js
 * **bcid**: The requested code. *required*  
-Look [here](https://github.com/bwipp/postscriptbarcode/wiki/Symbologies-Reference) a reference of the codes that can be generated.  
+Look [here](https://github.com/bwipp/postscriptbarcode/wiki/Symbologies-Reference) a reference of which codes can be generated.    
 Search the symbol you are interested in, go into the page (Ex: let´s say ```EAN-13``` as example) and search the ```Encoder:``` value (ean13 in this example). This value is what we need pass as ```bcid```'s value.
 
 * **text**: The value to represent. *required*. Look at the [reference](https://github.com/bwipp/postscriptbarcode/wiki/Symbologies-Reference) to know what's the format for each symbol.
