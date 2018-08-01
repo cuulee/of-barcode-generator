@@ -33,13 +33,14 @@ Example:
 }
 ```
 Specific from this project:
-* **base64**: Optional, the only parameter added by this project. Tells the function that we want the ouput encoded in base64. Defaults tu ```false```.
+* **base64**: Optional, not part of the modules parameters. Tells the function that we want the ouput encoded in base64. Defaults tu ```false```.
 
 Specific from bwip-js
 * **bcid**: The requested code. *required*  
-    Posible values are
+Look [here](https://github.com/bwipp/postscriptbarcode/wiki/Symbologies-Reference) a reference of the codes that can be generated.  
+Search the symbol you are interested in, go into the page (Ex: let´s say ```EAN-13``` as example) and search the ```Encoder:``` value (ean13 in this example). This value is what we need pass as ```bcid```'s value.
 
-* **text**: The value to represent. *required*
+* **text**: The value to represent. *required*. Look at the [reference](https://github.com/bwipp/postscriptbarcode/wiki/Symbologies-Reference) to know what's the format for each symbol.
 
 * **scaleX**: The x-axis scaling factor. Must be an integer > 0. Default is 2.
 
@@ -49,11 +50,12 @@ Specific from bwip-js
 
 * **rotate**: Allows rotating the image to one of the four orthogonal orientations. A string value. Must be one of:
 
-    "N" : Normal (not rotated). The default.
-    "R" : Clockwise (right) 90 degree rotation.
-    "L" : Counter-clockwise (left) 90 degree rotation.
-    "I" : Inverted 180 degree rotation.
-    paddingwidth : Sets the left and right padding (in points/pixels) around the rendered barcode. Rotates and scales with the image.
+    + "N" : Normal (not rotated). The default.  
+    + "R" : Clockwise (right) 90 degree rotation.  
+    + "L" : Counter-clockwise (left) 90 degree rotation.  
+    + "I" : Inverted 180 degree rotation.   
+
+*  **paddingwidth**: Sets the left and right padding (in points/pixels) around the rendered barcode. Rotates and scales with the image.
 
 * **paddingheight**: Sets the top and bottom padding (in points/pixels) around the rendered barcode. Rotates and scales with the image.
 
