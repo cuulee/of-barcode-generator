@@ -9,7 +9,7 @@ bwip-js is a translation to native JavaScript of the amazing code provided in [B
 
 1. Clone this repository
 ```bash
-$ git clone https://github.com/padiazg/barcode-af.git
+$ git clone https://github.com/padiazg/of-barcode-generator.git
 ```
 2. Replace "padiazg/" prefix from Docker Hub in stack.yml with your own account
 
