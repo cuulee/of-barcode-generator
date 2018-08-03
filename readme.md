@@ -2,11 +2,8 @@
 
 Do you need to generate barcodes or qr codes? This function can generate a lot of them.
 
-<<<<<<< HEAD
-This is a port of [barcode-genrator](https://github.com/padiazg/barcode-generator)
+This is a port of [barcode-generator](https://github.com/padiazg/barcode-generator)
 
-=======
->>>>>>> 382b82aa94ef208fa5eb688979e6abe6db31698d
 >This project uses [bwip-js](https://github.com/metafloor/bwip-js).  
 bwip-js is a translation to native JavaScript of the amazing code provided in [Barcode Writer in Pure PostScript](https://github.com/bwipp/postscriptbarcode). The translated code can run on any modern browser or JavaScript-based server framework.
 
@@ -14,11 +11,7 @@ bwip-js is a translation to native JavaScript of the amazing code provided in [B
 
 1. Clone this repository
 ```bash
-<<<<<<< HEAD
-$ git clone https://github.com/padiazg/of-barcode-generator
-=======
 $ git clone https://github.com/padiazg/of-barcode-generator.git
->>>>>>> 382b82aa94ef208fa5eb688979e6abe6db31698d
 ```
 2. Replace "padiazg/" prefix from Docker Hub in stack.yml with your own account
 
