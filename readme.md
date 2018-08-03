@@ -2,14 +2,16 @@
 
 Do you need to generate barcodes or qr codes? This function can generate a lot of them.
 
->This project uses [bqip-js](https://github.com/metafloor/bwip-js).  
+This is a port of [barcode-genrator](https://github.com/padiazg/barcode-generator)
+
+>This project uses [bwip-js](https://github.com/metafloor/bwip-js).  
 bwip-js is a translation to native JavaScript of the amazing code provided in [Barcode Writer in Pure PostScript](https://github.com/bwipp/postscriptbarcode). The translated code can run on any modern browser or JavaScript-based server framework.
 
-## Before you start
+## Build locally
 
 1. Clone this repository
 ```bash
-$ git clone https://github.com/padiazg/barcode-af.git
+$ git clone https://github.com/padiazg/of-barcode-generator
 ```
 2. Replace "padiazg/" prefix from Docker Hub in stack.yml with your own account
 
@@ -21,6 +23,27 @@ $ faas-cli new barcode --lang node
 Now you can build/deploy
 ```bash
 faas-cli build && faas-cli deploy
+```
+
+## Use directly from Docker Hub
+[of-barcode-generator](https://hub.docker.com/r/padiazg/of-barcode-generator/)
+1. Create deploy.yml
+```yml
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  barcode-generator:
+    image: padiazg/of-barcode-generator
+    environment:
+      write_timeout: 10s
+      read_timeout: 10s
+```
+2. Deploy with faas-cli
+Deploy your function using faas-cli
+```bash
+faas-cli deploy
 ```
 
 ## Parameters:

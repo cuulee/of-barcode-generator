@@ -3,10 +3,10 @@ provider:
   gateway: http://127.0.0.1:8080
 
 functions:
-  barcode:
+  of-barcode-generator:
     lang: node
     handler: ./barcode
-    image: padiazg/barcode
+    image: padiazg/of-barcode-generator
     environment:
       write_timeout: 10s
       read_timeout: 10s
